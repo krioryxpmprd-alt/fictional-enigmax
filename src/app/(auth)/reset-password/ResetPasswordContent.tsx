@@ -7,11 +7,9 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card } from '@/components/ui/card';
 import { toast } from '@/hooks/use-toast';
-import { QrCode, Lock, ArrowLeft } from 'lucide-react';
+import { Lock, ArrowLeft } from 'lucide-react';
 
-export const dynamic = 'force-dynamic';
-
-const ResetPasswordPage = () => {
+const ResetPasswordContent = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -34,7 +32,7 @@ const ResetPasswordPage = () => {
     }
   }, [searchParams, router]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (password !== confirmPassword) {
@@ -84,7 +82,7 @@ const ResetPasswordPage = () => {
       // Redirect to login page after successful reset
       router.push('/login');
       
-    } catch (error) {
+    } catch (error: any) {
       toast({
         title: 'Error',
         description: error.message || 'Failed to reset password',
@@ -100,7 +98,13 @@ const ResetPasswordPage = () => {
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#f5f5f5] to-[#f2adc8]/20 px-4">
         <Card className="w-full max-w-md p-8 bg-white border-0 shadow-2xl">
           <div className="text-center">
-            <p>Loading...</p>
+            <p>Invalid reset token</p>
+            <Button 
+              onClick={() => router.push('/login')}
+              className="mt-4"
+            >
+              Back to Login
+            </Button>
           </div>
         </Card>
       </div>
@@ -184,4 +188,4 @@ const ResetPasswordPage = () => {
   );
 };
 
-export default ResetPasswordPage;
+export default ResetPasswordContent;
