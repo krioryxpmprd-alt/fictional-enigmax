@@ -208,7 +208,12 @@ const PricingSection = () => {
                           <InfoPopover content="Преку 50 прилагодливи графички шаблони подготвени за печатење." />
                         </span>
                       </li>
-                      
+                       <li className="flex items-start">
+                        <span className="bullet-bg-grape mr-3 mt-0.5">
+                          <Check className="w-4 h-4 text-white" />
+                        </span>
+                        <span>Корисничка подршка<strong> 24/7</strong></span>
+                      </li>
                     </ul>
 
                     {/* CTA Button */}

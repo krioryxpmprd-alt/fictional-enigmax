@@ -1,4 +1,4 @@
-import { ChevronDown, ArrowRight } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 
 const faqs = [
@@ -16,7 +16,7 @@ const faqs = [
     question: "Дали прикачувањето на фотографии е безбедно?",
     answer:
       "Да, безбедноста е наш врвен приоритет. Сите фотографии и видеа се шифрирани и се чуваат на сигурни сервери со ограничен пристап. Само вие како домаќин имате пристап до вашиот албум. MemoryBox не може да ги гледа, користи или споделува вашите фотографии и видеа на кој било начин. Податоците не се користат за рекламирање, анализа или обука — вашите спомени остануваат само ваши."
-  }, 
+  },
   {
     question: "Како да добијам QR код за мојата свадба?",
     answer:
@@ -73,56 +73,59 @@ export default function FAQSection() {
       id="faq"
       className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-[#fff8f9] to-[#fff3f4] overflow-hidden"
     >
-      {/* ✅ JSON-LD структурирани податоци за SEO */}
+      {/* ✅ JSON-LD structured data for SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Декоративни елементи */}
-      <div className="hidden lg:block absolute top-10 -left-10 w-28 h-28 bg-gradient-to-r from-[#e24b2c]/20 to-[#f4c2c2]/30 rounded-full blur-3xl opacity-70" />
-      <div className="hidden lg:block absolute bottom-10 -right-16 w-32 h-32 bg-gradient-to-r from-[#f4c2c2]/20 to-[#e24b2c]/30 rounded-full blur-3xl opacity-60" />
+      {/* Decorative elements (lighter now) */}
+      <div className="hidden lg:block absolute top-10 -left-10 w-20 h-20 bg-gradient-to-r from-[#e24b2c]/10 to-[#f4c2c2]/20 rounded-full blur-lg opacity-50" />
+      <div className="hidden lg:block absolute bottom-10 -right-16 w-24 h-24 bg-gradient-to-r from-[#f4c2c2]/10 to-[#e24b2c]/20 rounded-full blur-lg opacity-40" />
 
       <div className="relative max-w-4xl mx-auto text-[#e24b2c]">
         <div className="text-center mb-16">
-          <h2 className="mb-2" id="mb-2">Најчесто поставувани прашања</h2>
+          <h2 className="mb-2 text-3xl font-bold">Најчесто поставувани прашања</h2>
           <p className="text-lg text-gray-600">
             Одговори на сè што треба да знаете за <strong>MemoryBox</strong> — најлесниот начин да ги соберете сите спомени.
           </p>
         </div>
 
-        {/* Листа со прашања */}
+        {/* FAQ List */}
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <details
               key={index}
-              className="group border border-gray-200 rounded-2xl hover:border-[#e24b2c] bg-white/70 backdrop-blur-sm shadow-sm transition-all duration-300 text-[#343f52]"
+              className="group border border-gray-200 rounded-2xl hover:border-[#e24b2c] bg-white shadow-sm transition-colors duration-300 text-[#343f52]"
             >
-              <summary className="cursor-pointer list-none px-6 py-5 flex items-center justify-between text-lg font-semibold hover:bg-[#fff8f9] rounded-2xl" id="betwlg">
+              <summary className="cursor-pointer list-none px-6 py-5 flex items-center justify-between text-lg font-semibold hover:bg-[#fff8f9] rounded-2xl select-none">
                 <span>{faq.question}</span>
-                <ChevronDown className="h-5 w-5 text-[#343f52] group-open:rotate-180 transition-transform duration-200" />
+                <ChevronDown
+                  className="h-5 w-5 text-[#343f52] transition-transform duration-200 group-open:rotate-180 will-change-transform"
+                />
               </summary>
-              <div className="px-6 pb-5 text-gray-600 leading-relaxed">{faq.answer}</div>
+              <div className="px-6 pb-5 text-gray-600 leading-relaxed">
+                {faq.answer}
+              </div>
             </details>
           ))}
         </div>
 
-        {/* CTA секција */}
+        {/* CTA Section */}
         <div className="text-center mt-20">
-          <div className="bg-[#e24b2c]/10 rounded-3xl p-5">
+          <div className="bg-[#e24b2c]/10 rounded-3xl p-6">
             <h3 className="text-2xl font-bold mb-3">Имате уште прашања?</h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
               Нашиот тим за поддршка со задоволство ќе ви помогне да го создадете совршениот фото-албум за вашиот настан.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-               <Link
-                                 href="/login"
-                                 className="items-center gap-2 transition-all duration-300 group-hover:gap-3"
-                                 id="custom-button-contact"
-                                 aria-label={`Пробајте ги услугите на Wedibox бесплатно`}
-                               >
-                                 Контактирајте нè
-                               </Link> 
+              <Link
+                href="/login"
+                className="inline-flex items-center justify-center rounded-full bg-[#e24b2c] text-white font-medium px-6 py-3 transition-transform duration-200 hover:scale-105"
+                aria-label="Контактирајте нè"
+              >
+                Контактирајте нè
+              </Link>
             </div>
           </div>
         </div>

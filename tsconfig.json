@@ -37,7 +37,7 @@
     "**/*.mts",
     ".next\\dev/types/**/*.ts",
     ".next\\dev/types/**/*.ts"
-, "src/app/page.js", "src/app/event/[id]/components/hooks/useAdminFavorites.js", "src/app/event/[id]/components/FavoritesTab.js", "src/components/landing/Objasnuvanje/Objasnuvanje.tsx", "src/components/landing/AdditionalFeatures/icons/WeddingRing.jsx"  ],
+, "src/app/page.js", "src/app/event/[id]/components/hooks/useAdminFavorites.js", "src/app/event/[id]/components/FavoritesTab.js", "src/components/landing/Objasnuvanje/Objasnuvanje.tsx", "src/components/landing/AdditionalFeatures/icons/WeddingRing.jsx", "src/app/(auth)/reset-password/page.js"  ],
   "exclude": [
     "node_modules"
   ]
