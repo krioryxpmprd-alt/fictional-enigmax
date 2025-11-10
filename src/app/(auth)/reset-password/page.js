@@ -9,6 +9,8 @@ import { Card } from '@/components/ui/card';
 import { toast } from '@/hooks/use-toast';
 import { QrCode, Lock, ArrowLeft } from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 const ResetPasswordPage = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
