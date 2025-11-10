@@ -1,0 +1,34 @@
+#headingtext {
+    font-size: calc(1.5em + 1.38vw);
+}
+
+#iconpadding {
+ display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    width: 60px;
+    height: 60px;
+}
+
+#textxl {
+   font-size: 1.1rem;
+   width: 250px
+}
+
+#subheading-text {
+    font-size: calc(1.2em + 0.5vw);
+}
+
+
+ 
+
+@media (max-width: 450px) {
+  #textxl {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+   
+}

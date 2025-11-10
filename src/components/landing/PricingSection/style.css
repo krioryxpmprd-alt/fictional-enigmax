@@ -1,0 +1,186 @@
+/* Custom colors and styles for PricingSection */
+
+/* Color definitions */
+.text-grape {
+  color: #9b59b6;
+}
+
+.text-neutral {
+  color: #64748b;
+}
+
+.text-teal {
+  color: #5f9ea0;
+}
+
+.text-dark {
+  color: #2c3e50;
+}
+
+.bg-grape {
+  background-color: #9b59b6;
+}
+
+.border-grape-500 {
+  border-color: #9b59b6;
+}
+
+/* Background colors */
+.bg-light {
+  background-color: #f8f9fa;
+}
+
+/* Bullet backgrounds */
+.bullet-bg-grape {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #9b59b6;
+  flex-shrink: 0;
+}
+
+.bullet-bg-neutral {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #64748b;
+  flex-shrink: 0;
+}
+
+.bullet-bg-teal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #5f9ea0;
+  flex-shrink: 0;
+}
+
+.bullet-bg-gray {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #94a3b8;
+  flex-shrink: 0;
+}
+
+.bullet-bg-red {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #e74c3c;
+  flex-shrink: 0;
+}
+
+/* Button styles */
+.btn-grape {
+  background-color: #9b59b6;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-grape:hover {
+  background-color: #8e44ad;
+  transform: translateY(-2px);
+}
+
+.btn-neutral {
+  background-color: #64748b;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-neutral:hover {
+  background-color: #475569;
+  transform: translateY(-2px);
+}
+
+.btn-teal {
+  background-color: #5f9ea0;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-teal:hover {
+  background-color: #4a8183;
+  transform: translateY(-2px);
+}
+
+/* Underline effect */
+.underline-grape {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-grape::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 3px;
+  background-color: #9b59b6;
+  border-radius: 2px;
+}
+
+/* Decorative shapes */
+.shape {
+  pointer-events: none;
+}
+
+.bg-dot-primary {
+  background-image: radial-gradient(circle, #667eea 2px, transparent 2px);
+  background-size: 10px 10px;
+}
+
+.bg-line-red {
+  border: 3px solid #e74c3c;
+  background: transparent;
+}
+
+/* Pricing card adjustments */
+.pricing-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon list spacing */
+.icon-list li {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (min-width: 1024px) {
+  .mt-lg-18 {
+    margin-top: 4.5rem;
+  }
+}
+
+/* Wrapper styles */
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+}
