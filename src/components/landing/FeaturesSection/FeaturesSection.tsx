@@ -6,6 +6,7 @@ import styles from "./styles.module.scss";
 import howitworks1 from "../assets/howitworks1.png";
 import howitworks2 from "../assets/howitworks2.png";
 import howitworks3 from "../assets/howitworks3.png";
+import './styles.css'
 
 const FeaturesSection = () => {
   const categories = [
@@ -90,7 +91,7 @@ const FeaturesSection = () => {
         }}
       />
 
-      <div className="max-w-7xl mx-auto"> 
+      <div className="max-w-7xl mx-auto scroll-mt-20" id="kako-funkcionira" > 
         {/* HERO HEADER */}
         <header className="text-center mb-16" id={styles.mb16}>
             
@@ -178,10 +179,11 @@ const FeaturesSection = () => {
                 <div className="pt-4">
                   <Link
                     href={`/uslugi/${category.slug}`}
-                    className={styles.custombutton}
+                    className="items-center gap-2 transition-all duration-300 group-hover:gap-3"
+                    id="custom-button-id-contact"
                     aria-label={`Дознај повеќе за ${category.title.toLowerCase()} во Македонија`}
                   >
-                    Дознај повеќе
+                    Пробајте бесплатно
                   </Link>
                 </div>
               </div>
@@ -250,10 +252,11 @@ const FeaturesSection = () => {
                 <div>
                   <Link
                     href={`/uslugi/${category.slug}`}
-                    className={styles.custombutton}
+                    className="items-center gap-2 transition-all duration-300 group-hover:gap-3"
+                    id="custom-button-id-contact"
                     aria-label={`Дознај повеќе за ${category.title.toLowerCase()} услугите`}
                   >
-                    Дознај повеќе
+                    Пробајте бесплатно
                   </Link>
                 </div>
               </div>

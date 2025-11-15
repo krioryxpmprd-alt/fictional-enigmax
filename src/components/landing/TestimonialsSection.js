@@ -36,7 +36,7 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="py-8 px-4 sm:px-6 lg:px-8 bg-[#f5f5f5]">
+    <section id="iskustva" className="py-8 px-4 sm:px-6 lg:px-8 bg-[#f5f5f5]  scroll-mt-16">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-[#2b2d2f] mb-4">Искуства на нашите корисници</h2>

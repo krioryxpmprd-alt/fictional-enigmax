@@ -2,7 +2,7 @@
 
 /* Color definitions */
 .text-grape {
-  color: #9b59b6;
+  color: #e24b2c;
 }
 
 .text-neutral {
@@ -18,11 +18,11 @@
 }
 
 .bg-grape {
-  background-color: #9b59b6;
+  background-color: #e24b2c;
 }
 
 .border-grape-500 {
-  border-color: #9b59b6;
+  border-color: #e24b2c;
 }
 
 /* Background colors */
@@ -38,7 +38,7 @@
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
-  background-color: #9b59b6;
+  background-color: #e24b2c;
   flex-shrink: 0;
 }
 
@@ -88,13 +88,13 @@
 
 /* Button styles */
 .btn-grape {
-  background-color: #9b59b6;
+  background-color: #e24b2c;
   color: white;
   text-decoration: none;
 }
 
 .btn-grape:hover {
-  background-color: #8e44ad;
+  background-color: #ca3315;
   transform: translateY(-2px);
 }
 
@@ -118,25 +118,17 @@
 .btn-teal:hover {
   background-color: #4a8183;
   transform: translateY(-2px);
+  
 }
 
 /* Underline effect */
 .underline-grape {
   position: relative;
-  display: inline-block;
+  display: inline-block; 
+  color: #e24b2c;
+  
 }
-
-.underline-grape::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 3px;
-  background-color: #9b59b6;
-  border-radius: 2px;
-}
-
+ 
 /* Decorative shapes */
 .shape {
   pointer-events: none;
@@ -172,6 +164,14 @@
 @media (min-width: 1024px) {
   .mt-lg-18 {
     margin-top: 4.5rem;
+  }
+
+  #iconlist-y3 {
+    min-height: 543px;
+  }
+
+  #text-icongray600 {
+    min-height: 48px;
   }
 }
 

@@ -21,8 +21,7 @@ const LandingPage = () => {
       <AdditionalFeatures />
       <PricingSection />
       <TestimonialsSection />
-      <FAQSection />
-      <CTASection />
+      <FAQSection /> 
       <Footer />
     </div>
   );

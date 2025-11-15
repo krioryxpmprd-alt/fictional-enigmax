@@ -1,4 +1,4 @@
-'use client'; // Required for client-side interactivity
+'use client';
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -9,6 +9,9 @@ import { Label } from '@/components/ui/label';
 import { Card } from '@/components/ui/card';
 import { toast } from '@/hooks/use-toast';
 import { QrCode, Mail, ArrowLeft } from 'lucide-react';
+import Footer from '@/components/landing/Footer';
+import Navigation from '@/components/landing/herosection/Navigation';
+import './styles.css'
 
 const ForgotPasswordPage = () => {
   const [email, setEmail] = useState('');
@@ -34,7 +37,7 @@ const ForgotPasswordPage = () => {
       }
       return false;
     } catch (error) {
-      console.error('Error checking email:', error);
+      console.error('Грешка при проверка на е-пошта:', error);
       return false;
     }
   };
@@ -50,8 +53,8 @@ const ForgotPasswordPage = () => {
       
       if (!exists) {
         toast({
-          title: 'Email Not Found',
-          description: 'This email is not registered in our system.',
+          title: 'Е-поштата не е пронајдена',
+          description: 'Оваа е-пошта не е регистрирана во нашиот систем.',
           variant: 'destructive',
         });
         setLoading(false);
@@ -62,13 +65,13 @@ const ForgotPasswordPage = () => {
       await resetPassword(email);
       setSent(true);
       toast({
-        title: 'Success',
-        description: 'Password reset link has been sent to your email',
+        title: 'Успешно',
+        description: 'Линкот за ресетирање на лозинката е испратен на вашата е-пошта',
       });
     } catch (error) {
       toast({
-        title: 'Error',
-        description: error.message || 'Failed to send reset link',
+        title: 'Грешка',
+        description: error.message || 'Неуспешно испраќање на линкот за ресетирање',
         variant: 'destructive',
       });
     } finally {
@@ -77,36 +80,38 @@ const ForgotPasswordPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#f5f5f5] to-[#f2adc8]/20 px-4">
-      <Card className="w-full max-w-md p-8 bg-white border-0 shadow-2xl">
+    <>
+    <Navigation/>
+    <div className="min-h-screen flex items-center justify-center px-4" id="forgot-password-container">
+      <Card className="w-full max-w-md p-8 " id="max-wd">
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <div className="h-16 w-16 bg-gradient-to-br from-[#f2adc8] to-[#f4c2c2] rounded-2xl flex items-center justify-center">
+            <div className="h-16 w-16 bg-gradient-to-br from-[#e24b2c] to-[#f97316] rounded-2xl flex items-center justify-center">
               <QrCode className="h-8 w-8 text-white" />
             </div>
           </div>
-          <h1 className="text-3xl font-bold text-[#2b2d2f] mb-2">Forgot Password?</h1>
+          <h1 className="text-3xl font-bold text-[#2b2d2f] mb-2">Ја заборавивте лозинката?</h1>
           <p className="text-gray-600">
             {sent
-              ? 'Check your email for reset instructions'
-              : 'Enter your email to receive a reset link'}
+              ? 'Проверете ја вашата е-пошта за инструкции за ресетирање'
+              : 'Внесете ја вашата е-пошта за да добиете линк за ресетирање'}
           </p>
         </div>
 
         {!sent ? (
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-[#2b2d2f]">Email Address</Label>
+              <Label htmlFor="email" className="text-[#2b2d2f]">E-mail адреса</Label>
               <div className="relative">
                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                 <Input
                   id="email"
                   type="email"
-                  placeholder="your@email.com"
+                  placeholder="E-mail адреса*"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="pl-10 h-12 border-gray-300 focus:border-[#f2adc8] focus:ring-[#f2adc8]"
+                  className="pl-10 h-12 border-gray-300 focus:border-[#e24b2c] focus:ring-[#e24b2c]"
                 />
               </div>
             </div>
@@ -114,9 +119,9 @@ const ForgotPasswordPage = () => {
             <Button
               type="submit"
               disabled={loading}
-              className="w-full h-12 bg-gradient-to-r from-[#f2adc8] to-[#f4c2c2] hover:from-[#f4c2c2] hover:to-[#f2adc8] text-white font-semibold"
+              className="w-full h-12 bg-gradient-to-r from-[#e24b2c] to-[#f97316] hover:from-[#f97316] hover:to-[#e24b2c] text-white font-semibold"
             >
-              {loading ? 'Sending...' : 'Send Reset Link'}
+              {loading ? 'Се испраќа...' : 'Испрати линк за ресетирање'}
             </Button>
           </form>
         ) : (
@@ -124,36 +129,39 @@ const ForgotPasswordPage = () => {
             <div className={`border rounded-lg p-4 ${emailExists ? 'bg-green-50 border-green-200' : 'bg-blue-50 border-blue-200'}`}>
               <p className={`text-center ${emailExists ? 'text-green-800' : 'text-blue-800'}`}>
                 {emailExists 
-                  ? `We've sent a password reset link to <strong>${email}</strong>. Please check your inbox and follow the instructions.`
-                  : `If an account exists with <strong>${email}</strong>, we've sent a password reset link. Please check your inbox.`
+                  ? `Испративме линк за ресетирање на лозинката на <strong>${email}</strong>. Ве молиме проверете ја вашата е-пошта и следете ги инструкциите.`
+                  : `Доколку постои профил со е-пошта <strong>${email}</strong>, испративме линк за ресетирање на лозинката. Ве молиме проверете ја вашата е-пошта.`
                 }
               </p>
             </div>
             <Button
               onClick={() => setSent(false)}
               variant="outline"
-              className="w-full h-12"
+              className="w-full h-12 border-gray-300 hover:bg-gray-50 cursor-pointer"
             >
-              Try Another Email
+              Пробајте со друга е-пошта
             </Button>
           </div>
         )}
 
-        <div className="mt-6 flex items-center justify-center space-x-4">
+        <div className="mt-6 flex items-left justify-left space-x-4">
           <Link
             href="/login"
-            className="flex items-center text-sm text-gray-500 hover:text-[#f2adc8]"
+            className="flex items-left text-sm text-gray-500 hover:text-[#e24b2c]"
           >
             <ArrowLeft className="h-4 w-4 mr-1" />
-            Back to login
+            Назад кон најава
           </Link>
           <span className="text-gray-300">|</span>
-          <Link href="/" className="text-sm text-gray-500 hover:text-[#f2adc8]">
-            Home
+          <Link href="/" className="text-sm text-gray-500 hover:text-[#e24b2c]">
+            Почетна
           </Link>
         </div>
       </Card>
     </div>
+    <Footer/>
+    
+    </>
   );
 };
 

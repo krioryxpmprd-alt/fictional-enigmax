@@ -15,17 +15,17 @@ const faqs = [
   {
     question: "Дали прикачувањето на фотографии е безбедно?",
     answer:
-      "Да, безбедноста е наш врвен приоритет. Сите фотографии и видеа се шифрирани и се чуваат на сигурни сервери со ограничен пристап. Само вие како домаќин имате пристап до вашиот албум. MemoryBox не може да ги гледа, користи или споделува вашите фотографии и видеа на кој било начин. Податоците не се користат за рекламирање, анализа или обука — вашите спомени остануваат само ваши."
+      "Да, безбедноста е наш врвен приоритет. Сите фотографии и видеа се шифрирани и се чуваат на сигурни сервери со ограничен пристап. Само вие како домаќин имате пристап до вашиот албум. MemoryBox не може да ги гледа, користи или споделува вашите фотографии и видеа. Податоците не се користат за рекламирање, анализа или обука — вашите спомени остануваат само ваши."
   },
   {
-    question: "Како да добијам QR код за мојата свадба?",
+    question: "Како да добијам QR код за мојат настан?",
     answer:
       "Штом го создадете настанот во MemoryBox, вашиот уникатен QR код автоматски се генерира. Можете да го преземете и вметнете на покани, декорации, екрани или да го споделите преку порака или е-маил. Гостите ќе го скенираат и веднаш ќе можат да прикачуваат фотографии и видеа."
   },
   {
     question: "Колку фотографии и видеа можам да соберам?",
     answer:
-      "Нема ограничувања! Со Premium пакетите можете да соберете неограничен број фотографии, видеа и пораки од вашите гости. Целта е да ги зачувате сите моменти без компромис."
+      "Нема ограничувања! Со Стандард и Премиум пакетите можете да соберете неограничен број фотографии, видеа и пораки од вашите гости. Целта е да ги зачувате сите моменти без компромис."
   },
   {
     question: "Може ли MemoryBox да се користи и за други настани?",
@@ -54,7 +54,7 @@ const faqs = [
   }
 ];
 
-export default function FAQSection() {
+export default function FAQSection({ showCTA = true }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -70,8 +70,8 @@ export default function FAQSection() {
 
   return (
     <section
-      id="faq"
-      className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-[#fff8f9] to-[#fff3f4] overflow-hidden"
+      id="najcesto-postavuvani-prasanja"
+      className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-[#fff8f9] to-[#fff3f4] overflow-hidden scroll-mt-4"
     >
       {/* ✅ JSON-LD structured data for SEO */}
       <script
@@ -110,25 +110,28 @@ export default function FAQSection() {
             </details>
           ))}
         </div>
-
+       
         {/* CTA Section */}
+        {showCTA && (
         <div className="text-center mt-20">
           <div className="bg-[#e24b2c]/10 rounded-3xl p-6">
             <h3 className="text-2xl font-bold mb-3">Имате уште прашања?</h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Нашиот тим за поддршка со задоволство ќе ви помогне да го создадете совршениот фото-албум за вашиот настан.
+            <p className="text-stone-950 mb-6 max-w-2xl mx-auto">
+              Нашиот тим за поддршка на корисници со задоволство ќе ви помогне да го создадете совршениот фото-албум за вашиот настан.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/login"
-                className="inline-flex items-center justify-center rounded-full bg-[#e24b2c] text-white font-medium px-6 py-3 transition-transform duration-200 hover:scale-105"
+                href="/kontakt"
+                className="items-center gap-2 transition-all duration-300 group-hover:gap-3"
+                id="custom-button-id-contact"
                 aria-label="Контактирајте нè"
               >
                 Контактирајте нè
               </Link>
             </div>
-          </div>
-        </div>
+          </div> 
+           </div>
+      )} 
       </div>
     </section>
   );

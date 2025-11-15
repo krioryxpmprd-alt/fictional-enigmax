@@ -23,16 +23,16 @@ const InfoPopover = ({ content }) => (
 
 const PricingSection = () => {
   return (
-    <section className="wrapper bg-light">
+    <section className="wrapper bg-light scroll-mt-12" id="cenovnik">
       <div className="container py-14 md:py-16 mx-auto px-4 max-w-7xl">
         {/* Heading at Top - Full Width */}
         <div className="text-center mb-12">
           <h3 className="text-4xl md:text-5xl font-bold mb-4">
-            Колку чини QR код албумот?
+            Ценовник
           </h3>
           <p className="text-lg max-w-3xl mx-auto">
             Совршено решение{' '}
-            <span className="underline-grape">за секоја прослава</span> во Македонија. Изберете го најдобриот план за вашиот настан и уживајте во албумите од вашите гости.
+            <span className="underline-grape" >за секоја прослава</span> во Македонија. Изберете го најдобриот план за вашиот настан и уживајте во албумите од вашите гости.
           </p>
         </div>
 
@@ -57,11 +57,11 @@ const PricingSection = () => {
                     </div>
 
                     {/* Title & Description */}
-                    <h4 className="text-2xl font-bold mt-5 mb-2">Бесплатен Пробен Период</h4>
-                    <p className="text-gray-600 mb-4">Испробајте пред да изберете план</p>
+                    <h4 className="text-2xl font-bold mt-5 mb-2">Пробен План</h4>
+                    <p className="text-gray-600 mb-4" id="text-icongray600">Испробајте пред да изберете план</p>
 
                     {/* Features List */}
-                    <ul className="icon-list space-y-3 mt-7 mb-8">
+                    <ul className="icon-list space-y-3 mt-7 mb-8" id="iconlist-y3">
                       <li className="flex items-start">
                         <span className="bullet-bg-neutral mr-3 mt-0.5">
                           <Check className="w-4 h-4 text-white" />
@@ -93,29 +93,23 @@ const PricingSection = () => {
                         <span><strong>Преземање на сите фотографии</strong></span>
                       </li>
                       <li className="flex items-start">
+                        <span className="bullet-bg-neutral mr-3 mt-0.5">
+                          <Check className="w-4 h-4 text-white" />
+                        </span>
+                        <span><strong>Текстуални и гласовни пораки</strong></span>
+                      </li>
+                      <li className="flex items-start">
                         <span className="bullet-bg-gray mr-3 mt-0.5">
                           <X className="w-4 h-4 text-white" />
                         </span>
-                        <span className="text-gray-400">Гласовни пораки и видеа</span>
+                        <span className="text-gray-400">Прикачување видеа</span>
                       </li>
                       <li className="flex items-start">
                         <span className="bullet-bg-gray mr-3 mt-0.5">
                           <X className="w-4 h-4 text-white" />
                         </span>
                         <span className="text-gray-400">50+ QR дизајни спремни за штампање</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="bullet-bg-gray mr-3 mt-0.5">
-                          <X className="w-4 h-4 text-white" />
-                        </span>
-                        <span className="text-gray-400">Пораки и посвети од гости</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="bullet-bg-gray mr-3 mt-0.5">
-                          <X className="w-4 h-4 text-white" />
-                        </span>
-                        <span className="text-gray-400">Прашање за името на гостите</span>
-                      </li>
+                      </li> 
                     </ul>
 
                     {/* CTA Button */}
@@ -150,11 +144,11 @@ const PricingSection = () => {
                     </div>
 
                     {/* Title & Description */}
-                    <h4 className="text-2xl font-bold mt-5 mb-2">Про План</h4>
-                    <p className="text-gray-600 mb-4">Идеално за свадби, родендени и прослави</p>
+                    <h4 className="text-2xl font-bold mt-5 mb-2">Стандард План</h4>
+                    <p className="text-gray-600 mb-4" id="text-icongray600">Идеално за свадби, родендени и прослави</p>
 
                     {/* Features List */}
-                    <ul className="icon-list space-y-3 mt-7 mb-8">
+                    <ul className="icon-list space-y-3 mt-7 mb-8" id="iconlist-y3">
                       <li className="flex items-start">
                         <span className="bullet-bg-grape mr-3 mt-0.5">
                           <Check className="w-4 h-4 text-white" />
@@ -221,7 +215,7 @@ const PricingSection = () => {
                       href="https://app.picbook.uk/new-event"
                       className="btn-grape inline-block px-6 py-3 text-center rounded-full font-semibold transition-all hover:shadow-lg w-full"
                     >
-                      Изберете Про &gt;
+                      Изберете Стандард &gt;
                     </a>
                   </CardContent>
                 </Card>
@@ -235,21 +229,27 @@ const PricingSection = () => {
                     <div className="prices text-dark">
                       <div className="price mb-3 flex items-start justify-start text-teal">
                         <span className="price-currency text-base">ден</span>
-                        <span className="price-value text-4xl font-bold">1,790</span> 
+                        <span className="price-value text-4xl font-bold">1,490</span> 
                       </div>
                     </div>
 
                     {/* Title & Description */}
                     <h4 className="text-2xl font-bold mt-5 mb-2">Премиум План</h4>
-                    <p className="text-gray-600 mb-4">Совршено за повеќе настани</p>
+                    <p className="text-gray-600 mb-4" id="text-icongray600">Совршено за повеќе настани</p>
 
                     {/* Features List */}
-                    <ul className="icon-list space-y-3 mt-7 mb-8">
+                    <ul className="icon-list space-y-3 mt-7 mb-8" id="iconlist-y3">
                       <li className="flex items-start">
                         <span className="bullet-bg-teal mr-3 mt-0.5">
                           <Check className="w-4 h-4 text-white" />
                         </span>
-                        <span>Вклучено <strong>се</strong> од <strong>'Про План'</strong></span>
+                        <span>Вклучени 3 настани</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="bullet-bg-teal mr-3 mt-0.5">
+                          <Check className="w-4 h-4 text-white" />
+                        </span>
+                        <span>Вклучено се од <strong>'Стандард План'</strong></span>
                       </li>
                       <li className="flex items-start">
                         <span className="bullet-bg-teal mr-3 mt-0.5">
@@ -308,12 +308,12 @@ const PricingSection = () => {
             </div>
 
           {/* Alert Message */}
-          <Alert className="mt-8 bg-blue-50 border-blue-200 max-w-4xl mx-auto">
+          {/* <Alert className="mt-8 bg-blue-50 border-blue-200 max-w-4xl mx-auto">
             <MessageCircle className="h-5 w-5 text-blue-600" />
             <AlertDescription className="ml-7">
               <b>Не грижете се:</b> дури и да го купите албумот денес, тој ќе биде активен веднаш, но периодот на валидност ќе започне од датумот на настанот.
             </AlertDescription>
-          </Alert>
+          </Alert> */}
         </div>
       </div>
     </section>

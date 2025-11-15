@@ -130,6 +130,17 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
+#custom-button-id-contact { 
+    display: inline-flex;
+    background: linear-gradient(to right, #faaa5b, #e53714);
+            color: white;
+            padding: 0.7rem 2rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1rem; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
 
 #mb-2 {
   font-size: calc(1.5em + 1.38vw);
